@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Image Picker</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+    #imageContainer {
+      margin-top: 20px;
+    }
+    #imageContainer img {
+      width: 300px; 
+      height: auto; 
+    }
+  </style>
+</head>
+<body>
+
+  <label for="imageSelector">Pilih Gambar:</label>
+  <select id="imageSelector" onchange="showImage()">
+    <option value="camelia.jpg">Camelia</option>
+    <option value="chamomile.jpg">Chamomile</option>
+    <option value="dahlia.jpg">Dahlia</option>
+    <option value="edelweiss.jpg">Edelweiss</option>
+    <option value="hydrangea.jpg">Hydrangea</option>
+    <option value="marigold.jpeg">Marigold</option>
+  </select>
+
+  <div id="imageContainer"></div>
+
+  <script>
+    function showImage() {
+      var imageSelector = document.getElementById('imageSelector');
+      var imageContainer = document.getElementById('imageContainer');
+
+      
+      var selectedImage = imageSelector.value;
+
+      imageContainer.innerHTML = `<img src="gambar.img/${selectedImage}" alt="${selectedImage}">`;
+
+      alert(`Ini Gambar ${selectedImage}`);
+    }
+  </script>
+
+</body>
+</html>

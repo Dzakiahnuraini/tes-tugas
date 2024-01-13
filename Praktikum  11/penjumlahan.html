@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Penjumlahan</title>
+</head>
+<body>
+
+<h2>Penjumlahan</h2>
+
+<table>
+    <tr>
+        <td><input type="number" id="angka1" onChange="hitung()"></td>
+        <td><img src="plus_icon.png" alt="+" id="plusIcon"></td>
+        <td><input type="number" id="angka2" onChange="hitung()"></td>
+        <td><img src="equals_icon.png" alt="=" id="equalsIcon"></td>
+        <td><span id="hasil">0</span></td>
+    </tr>
+</table>
+
+<script>
+    function hitung() {
+        // Ambil nilai dari input
+        var angka1 = document.getElementById("angka1").value;
+        var angka2 = document.getElementById("angka2").value;
+
+        // Lakukan perhitungan
+        var hasil = parseInt(angka1) + parseInt(angka2);
+
+        // Tampilkan hasil
+        document.getElementById("hasil").innerHTML = hasil;
+    }
+</script>
+
+</body>
+</html>

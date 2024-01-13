@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hitung Biaya Parkir</title>
+</head>
+<body>
+
+<label for="jamMasuk">Jam Masuk:</label>
+<input type="number" id="jamMasuk" onChange="calculateParkingCost()" placeholder="Masukkan jam masuk" />
+
+<label for="jamKeluar">Jam Keluar:</label>
+<input type="number" id="jamKeluar" onChange="calculateParkingCost()" placeholder="Masukkan jam keluar" />
+
+<p id="hasilParkir">Lama parkir: 0 jam | Tarif parkir: Rp 0</p>
+
+<script>
+    function calculateParkingCost() {
+        // Ambil nilai dari input jam masuk dan jam keluar
+        var jamMasuk = document.getElementById("jamMasuk").value;
+        var jamKeluar = document.getElementById("jamKeluar").value;
+
+        // Hitung lama parkir
+        var lamaParkir = jamKeluar - jamMasuk;
+
+        // Hitung biaya parkir
+        var tarifParkir = 0;
+        if (lamaParkir <= 2) {
+            tarifParkir = 3000;
+        } else {
+            tarifParkir = 3000 + (lamaParkir - 2) * 1000;
+        }
+
+        // Tampilkan hasil parkir
+        var hasilParkir = document.getElementById("hasilParkir");
+        hasilParkir.innerHTML = "Lama parkir: " + lamaParkir + " jam | Tarif parkir: Rp " + tarifParkir;
+    }
+</script>
+
+</body>
+</html>

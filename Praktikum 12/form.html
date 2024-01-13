@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Selamat Datang</title>
+  <style>
+    body {
+      font-family: Monaco, monospace;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      background-color: black;
+      overflow: hidden;
+    }
+    #welcomeText {
+      font-size: 48px; 
+      color: white; 
+      cursor: pointer;
+      transition: color 0.3s ease, font-size 0.3s ease; 
+      animation: moveText 5s linear infinite; 
+    }
+
+    @keyframes moveText {
+      0% {
+        transform: translateX(-100%); 
+      }
+      100% {
+        transform: translateX(100vw); 
+      }
+    }
+  </style>
+</head>
+<body onclick="changeColor()">
+
+  <div id="welcomeText">Kegagalan Adalah Awal Keberhasilan</div>
+
+  <script>
+    function changeColor() {
+      var welcomeText = document.getElementById('welcomeText');
+      var colors = ['#800080', '#9932CC', '#8A2BE2', '#9400D3', '#7B68EE']; 
+      var randomColor = colors[Math.floor(Math.random() * colors.length)];
+      welcomeText.style.color = randomColor;
+      welcomeText.style.fontSize = '60px'; 
+    }
+  </script>
+
+</body>
+</html>
